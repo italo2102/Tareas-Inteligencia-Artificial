@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>Puedes decirlo nuevamente.</template>
+  </category>
+  
+  <category>
+      <pattern>Hola *</pattern>
+      <template>Hello, cual es tu nombre?</template>
+  </category>
+  
+  <category>
+      <pattern>Mi nombre es *</pattern>
+      <template>Hola <set name= "firstname"><star/></set>, en qué te puedo ayudar?</template>
+  </category>
+  
+ <category>
+     <pattern>Cual es mi nombre</pattern>
+     <template>Tu nombre es <get name="firstname"/>, en que puedo ayudarte?</template>
+ </category>
+ 
+ <category>
+    <pattern>* lugar donde *</pattern>
+    <template> Te puedo recomendar visitar <set name = "place">
+        <random>
+             <li> La Plaza de Armas</li>
+             <li> Los balcones de Lima</li>
+             <li> Plaza San Martin</li>
+             <li> Museo de la nación</li>
+             <li> Larcomar</li>
+             <li> Parque Kennedy</li>
+             <li> Circuito Mágico del Agua</li>
+         </random>
+         </set>
+     </template>
+ </category>
+ 
+    <category>
+    <pattern>otro lugar donde *</pattern>
+    <template> Claro como no, otro lugar para visitar es <set name = "place">
+        <random>
+             <li> La Plaza de Armas</li>
+             <li> Los balcones de Lima</li>
+             <li> Plaza San Martin</li>
+             <li> Museo de la nación</li>
+             <li> Larcomar</li>
+             <li> Parque Kennedy</li>
+             <li> Circuito Mágico del Agua</li>
+         </random>
+         </set>
+     </template>
+ </category>
+ 
+  <category>
+    <pattern>Donde se encuentra *</pattern>?
+    <template> Se encuentra en 
+        <condition name = "place">
+            <li value = "La Plaza de Armas"> el centro historico de Lima</li>
+             <li value = "Los balcones de Lima"> el centro historico de Lima</li>
+             <li value = "Plaza San Martin"> el centro historico de Lima </li>
+             <li value = "Museo de la nación"> Av. Javier Prado Este 2465, San Borja</li>
+             <li value = "Larcomar"> el distrito de Miraflores</li>
+             <li value = "Parque Kennedy"> el distrito de Miraflores</li>
+             <li value = "Circuito Mágico del Agua"> el Cercado de Lima</li>
+        </condition>
+     </template>
+ </category>
+ 
+ <category>
+     <pattern>Muchas gracias por tu ayuda</pattern>
+     <template>EStare para ayudarte <set name= "firstname"><star/></set>, adios</template>
+ </category>
+ 
+  
+</aiml>
